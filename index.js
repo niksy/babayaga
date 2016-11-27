@@ -33,11 +33,11 @@ function setCommonBundles ( opts ) {
 	});
 }
 
-module.exports = Bfy;
+module.exports = Babayaga;
 
-function Bfy ( opts ) {
-	if (!(this instanceof Bfy)) {
-		return new Bfy(opts);
+function Babayaga ( opts ) {
+	if (!(this instanceof Babayaga)) {
+		return new Babayaga(opts);
 	}
 
 	this.opts = _.merge({}, {
@@ -96,7 +96,7 @@ function Bfy ( opts ) {
 	this.subtasks = [];
 
 }
-Bfy.prototype.setup = function ( opts ) {
+Babayaga.prototype.setup = function ( opts ) {
 
 	let bundle = browserify(Object.assign({
 		entries: opts.entry,
@@ -179,7 +179,7 @@ Bfy.prototype.setup = function ( opts ) {
 	return bundle;
 
 };
-Bfy.prototype.write = function ( opts ) {
+Babayaga.prototype.write = function ( opts ) {
 
 	const self = this;
 
@@ -205,7 +205,7 @@ Bfy.prototype.write = function ( opts ) {
 	return stream3;
 
 };
-Bfy.prototype.build = function () {
+Babayaga.prototype.build = function () {
 
 	this.tasks = _.map(this.opts.entries, ( file, key ) => {
 		const f = path.resolve(this.opts.cwd, file);
@@ -233,7 +233,7 @@ Bfy.prototype.build = function () {
 		});
 
 };
-Bfy.prototype._outputCombinedTasks = function ( tasks, isAsyncTask ) {
+Babayaga.prototype._outputCombinedTasks = function ( tasks, isAsyncTask ) {
 
 	const stream1 = this.opts.onStartBuild(es.merge(tasks), Boolean(isAsyncTask));
 	const stream2 = this.opts.onBeforeBuild(stream1, Boolean(isAsyncTask));
