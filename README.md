@@ -74,6 +74,8 @@ List of entry points where key is identifier of the entry point and value filena
 Type: `Object`  
 Default: `{}`
 
+Build output options.
+
 | Property | Type | Default | Description |
 | --- | --- | --- | --- |
 | `path` | `String` | `'./'` | Output path for the build. |
@@ -86,14 +88,14 @@ Default: `{}`
 | Property | Type | Description |
 | --- | --- | --- |
 | `key` | `String` | Entry point key. |
-| `file` | `String` | Filename of entry point. |
+| `file` | `String` | Entry point filena. |
 
 ###### asyncFilename
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `hash` | `String` | [Hash of resolved file](https://github.com/niksy/browserify-require-async#setoutputfile). |
-| `file` | `String` | Filename of resolved file. |
+| `hash` | `String` | [Resolved file hash](https://github.com/niksy/browserify-require-async#setoutputfile). |
+| `file` | `String` | Resolved file filename. |
 
 ##### watch
 
